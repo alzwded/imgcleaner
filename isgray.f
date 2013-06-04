@@ -9,7 +9,9 @@ C   RETURNS
 C     1 => P is gray
 C     0 => P is not gray
 C Todo:
-      INTEGER FUNCTION ISGRAY (P)
+      FUNCTION ISGRAY (P)
+      IMPLICIT NONE
+      INTEGER ISGRAY
       INTEGER P(4)
 C     Local variables
       INTEGER RGB(3)

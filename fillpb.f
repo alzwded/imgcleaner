@@ -15,6 +15,7 @@ C       the distance from the nearest black pixel
 C Todo:
 C     GM should be REAL
       SUBROUTINE FILLPB(PB, PBW, PBH, GM, GMW, GMH, DM, DMW, DMH)
+      IMPLICIT NONE
       INTEGER PBW, PBH, GMW, GMH, DMW, DMH
       INTEGER PB(PBW, PBH), GM(GMW, GMH), DM(DMW, DMH)
 C     Local variables

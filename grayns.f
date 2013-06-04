@@ -11,8 +11,11 @@ C               0..1 or
 C               -1 if pixel is NOT gray
 C Todo:
       SUBROUTINE GRAYNS(P, G)
+      IMPLICIT NONE
       INTEGER P(4)
       REAL G
+C     Subroutines
+      INTEGER ISGRAY
 C     Local variables
 C     ------------------------------------------------------------
       WRITE (*, *) "HELLO!\n"
