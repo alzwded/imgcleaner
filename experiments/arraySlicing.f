@@ -2,7 +2,7 @@
       IMPLICIT NONE
       INTEGER W, H
       PARAMETER (W = 4, H = 4)
-      INTEGER A(W, H), I, J
+      INTEGER A(W, H), I, J, WW, HH
 
       DO 10 I = 1, W
         DO 20 J = 1, H
@@ -21,6 +21,12 @@ C     WTF I SWEAR this didn't work earlier when I'd tried it
       CALL JJJ(A(3:4, 1:2), 2, 2)
       CALL JJJ(A(1:1, 1:1), 1, 1)
       CALL JJJ(A, 4, 4)
+
+      I = 2
+      J = 1
+      WW = 2
+      HH = 3
+      CALL JJJ(A(I:I + WW - 1, J:J + HH - 1), WW, HH)
 
       STOP
       END
