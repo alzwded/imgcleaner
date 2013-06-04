@@ -1,3 +1,8 @@
+/*
+author: Vlad Mesco
+date: Tue Jun  4 21:17:26 EEST 2013
+description: main file
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>

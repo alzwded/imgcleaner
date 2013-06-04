@@ -1,3 +1,10 @@
+/*
+author: Vlad Mesco
+date: Tue Jun  4 21:16:27 EEST 2013
+description: for some reason WRITE and PRINT don't do anything when compiled
+             with gfortran ( :-/ ) so these are print functions for that
+             the linker handles everything because why not
+*/
 #include <stdio.h>
 void cprnti_(int* i)
 {
