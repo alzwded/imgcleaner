@@ -16,7 +16,6 @@ C Todo:
 C     Local variables
       INTEGER RGB(3)
       INTEGER I, TMP
-      INTEGER RET
 C     ------------------------------------------------------------
       RGB(1) = P(3)
       RGB(2) = P(2)
