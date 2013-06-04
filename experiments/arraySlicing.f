@@ -7,9 +7,14 @@
       DO 10 I = 1, W
         DO 20 J = 1, H
           A(I, J) = (I - 1) * W + J - 1
-          WRITE (*, *) A(I, J)
+C         WRITE (*, *) A(I, J)
    20   CONTINUE
    10 CONTINUE
+
+      DO 30 I = 1, W
+        WRITE (*, "(20I4)") (A(I, J), J = 1, H)
+   30 CONTINUE
+
       CALL FFF(A, 4, 4, 1, 1, 2, 2)
 C     WTF I SWEAR this didn't work earlier when I'd tried it
       CALL JJJ(A(2:3, 2:3), 2, 2)
@@ -33,10 +38,13 @@ C 500 CONTINUE
 C     somehow this works on gfortran
       B(1:, 1:) = A(1 + OW:W2, OH + 1:H2)
 
+C     DO 100 I = 1, W2
+C       DO 200 J = 1, H2
+C         WRITE (*, *) B(I, J)
+C 200   CONTINUE
+C 100 CONTINUE
       DO 100 I = 1, W2
-        DO 200 J = 1, H2
-          WRITE (*, *) B(I, J)
-  200   CONTINUE
+        WRITE (*, "(20I4)") (B(I, J), J = 1, H2)
   100 CONTINUE
 
       RETURN
@@ -49,11 +57,15 @@ C     somehow this works on gfortran
 
       WRITE (*, *) "In jjj"
 
-      DO 222 I = 1, W
-        DO 333 J = 1, H
-          WRITE (*, *) A(I, J)
-  333   CONTINUE
-  222 CONTINUE
+c     DO 222 I = 1, W
+c       DO 333 J = 1, H
+c         WRITE (*, *) A(I, J)
+c 333   CONTINUE
+c 222 CONTINUE
+
+      DO 444 I = 1, W
+        WRITE (*, "(20I4)") (A(I, J), J = 1, H)
+  444 CONTINUE
 
       RETURN
       END
