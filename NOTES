@@ -14,3 +14,7 @@ C     will print 3
       WRITE (*, *) A(2)
       RETURN
       END
+
+also: something about A(:) to receive slices?
+maybe A(leadingsize, *) ?
+maybe A(*)?
