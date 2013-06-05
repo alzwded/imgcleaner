@@ -11,9 +11,6 @@ C     Local variables
       INTEGER BLOCK(BSIZE, BSIZE, 4)
 C     ------------------------------------------------------------
       DO 10 I = 1, W / BSIZE
-        IF(I * BSIZE > W) THEN
-          EXIT
-        ENDIF
         BLOCK(1:BSIZE, 1:BSIZE, 1:4) = BMAP((I - 1) * BSIZE + 1:I * 10,
      &      (I - 1) * BSIZE + 1:I * BSIZE, 1:4)
         CALL FILLPB(BLOCK, GM, DM, BSIZE)
