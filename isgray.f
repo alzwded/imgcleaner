@@ -22,7 +22,7 @@ C     ------------------------------------------------------------
       RGB(3) = P(1)
 
     5 DO 10 I = 1,2
-        IF(RGB(I) .GT. RGB(I + 1))THEN
+        IF (RGB(I) .GT. RGB(I + 1))THEN
           TMP = RGB(I)
           RGB(I) = RGB(I + 1)
           RGB(I + 1) = TMP
@@ -30,7 +30,7 @@ C     ------------------------------------------------------------
         ENDIF
    10 CONTINUE
       
-   20 IF(RGB(3) - RGB(2) .LT. 10 .AND. RGB(2) - RGB(1) .LT. 10 .AND.
+   20 IF (RGB(3) - RGB(2) .LT. 10 .AND. RGB(2) - RGB(1) .LT. 10 .AND.
      &    RGB(3) - RGB(1) .LT. 10)THEN
         ISGRAY = .TRUE.
       ELSE

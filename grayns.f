@@ -24,7 +24,7 @@ C     ------------------------------------------------------------
       CALL CPRNMI('P(2)', 4, P(2))
       CALL CPRNMI('P(3)', 4, P(3))
       CALL CPRNMI('P(4)', 4, P(4))
-      IF(ISGRAY(P))THEN
+      IF (ISGRAY(P))THEN
         G = (P(1) + P(2) + P(3)) / (3 * 255.0)
       ELSE
         G = -1
