@@ -14,6 +14,10 @@ all: $(OBJS) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJS) 
 	$(CC) -o imgCleaner $(LIBDEPS) -g $(OBJS)
+	mkdir -p obj
+	mv *.o obj/
+	mkdir -p bin
+	mv $(EXECUTABLE) bin/
 
 .f.o:
 	$(F77) $(F77FLAGS) -o $@ $<
@@ -24,4 +28,4 @@ $(EXECUTABLE): $(OBJS)
 imgCleaner.o: imgCleanerF.h
 
 clean:
-	rm -f imgCleaner *.o
+	rm -f imgCleaner *.o bin/ obj/
