@@ -11,7 +11,7 @@ C     0 => P is not gray
 C Todo:
       FUNCTION ISGRAY (P)
       IMPLICIT NONE
-      INTEGER ISGRAY
+      LOGICAL ISGRAY
       INTEGER P(4)
 C     Local variables
       INTEGER RGB(3)
@@ -32,9 +32,9 @@ C     ------------------------------------------------------------
       
    20 IF(RGB(3) - RGB(2) .LT. 10 .AND. RGB(2) - RGB(1) .LT. 10 .AND.
      &    RGB(3) - RGB(1) .LT. 10)THEN
-        ISGRAY = 1
+        ISGRAY = .TRUE.
       ELSE
-        ISGRAY = 0
+        ISGRAY = .FALSE.
       ENDIF
 
       RETURN

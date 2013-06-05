@@ -1,4 +1,4 @@
-FORTRANS = isgray.f grayns.f fillpb.f
+FORTRANS = isgray.f grayns.f fillpb.f proces.f clean.f
 SRC = imgCleaner.c fUtils.c
 OBJS = $(FORTRANS:.f=.o) $(SRC:.c=.o)
 EXECUTABLE = imgCleaner

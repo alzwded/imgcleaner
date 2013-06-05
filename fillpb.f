@@ -13,6 +13,7 @@ C     DM(DMW, DMH)  - DistanceMap, where 0 are black pixels, <some
 C       arbitrarily large value> are white pixels, and other values are
 C       the distance from the nearest black pixel
 C Todo:
+C     many things
 C     GM should be REAL
       SUBROUTINE FILLPB(PB, PBW, PBH, GM, GMW, GMH, DM, DMW, DMH)
       IMPLICIT NONE

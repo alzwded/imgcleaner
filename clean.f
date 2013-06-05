@@ -15,6 +15,7 @@ C       arbitrarily large value> are white pixels, and other values are
 C       the distance from the nearest black pixel
 C Todo:
 C     GM should be REAL
+C     ... and many other things
       SUBROUTINE CLEAN(PB, PBW, PBH, GM, GMW, GMH, DM, DMW, DMH)
       IMPLICIT NONE
       INTEGER PBW, PBH, GMW, GMH, DMW, DMH
