@@ -13,7 +13,7 @@ all: $(OBJS) $(EXECUTABLE)
 .PHONY all:
 
 $(EXECUTABLE): $(OBJS) 
-	$(CC) -o imgCleaner $(LIBDEPS) -g $(OBJS)
+	$(CC) -o imgCleaner -g $(OBJS) $(LIBDEPS)
 
 .f.o:
 	$(F77) $(F77FLAGS) -o $@ $<
