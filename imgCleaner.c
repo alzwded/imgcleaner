@@ -15,6 +15,7 @@ uint32_t* BMap = NULL;
 size_t Width;
 size_t Height;
 size_t Depth;
+int BlockSize = 30;
 
 size_t PixelBlockSize;
 
@@ -40,8 +41,8 @@ int loadJpg(const char* Name){
     width = cinfo.output_width;
     height = cinfo.output_height;
 
-    uint32_t* pTest = (uint32_t*)malloc(width*height*sizeof(uint32_t));
-    uint8_t* pDummy = (uint8_t*)pTest;
+    uint32_t* pTest = (uint32_t*)malloc(width*height*4*sizeof(uint32_t));
+    uint32_t* pDummy = (uint32_t*)pTest;
     if (!pTest){
         printf("NO MEM FOR JPEG CONVERT!\n");
         goto loadJpg_Error;
@@ -54,7 +55,7 @@ int loadJpg(const char* Name){
         size_t x;
         (void) jpeg_read_scanlines(&cinfo, pJpegBuffer, 1);
         for (x=0;x<width;x++) {
-            uint8_t a,r,g,b;
+            uint32_t a,r,g,b;
             a = 0; // alpha value is not supported on jpg
             r = pJpegBuffer[0][cinfo.output_components*x];
             if (cinfo.output_components>2)
@@ -146,7 +147,8 @@ int main(int argc, char* argv[])
         return 1;
     }
     if(loadJpg(argv[1])) {
-        process();
+        //int fWidth = Width * 4;
+        proces_((int*)BMap, (int*)&Width, (int*)&Height, &BlockSize);
         write();
         cleanup();
     }

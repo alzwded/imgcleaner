@@ -1,4 +1,4 @@
-FORTRANS = isgray.f grayns.f fillpb.f
+FORTRANS = isgray.f grayns.f fillpb.f proces.f clean.f
 SRC = imgCleaner.c fUtils.c
 OBJS = $(FORTRANS:.f=.o) $(SRC:.c=.o)
 EXECUTABLE = imgCleaner
@@ -14,6 +14,10 @@ all: $(OBJS) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJS) 
 	$(CC) -o imgCleaner -g $(OBJS) $(LIBDEPS)
+	mkdir -p obj
+	mv *.o obj/
+	mkdir -p bin
+	mv $(EXECUTABLE) bin/
 
 .f.o:
 	$(F77) $(F77FLAGS) -o $@ $<
@@ -24,4 +28,4 @@ $(EXECUTABLE): $(OBJS)
 imgCleaner.o: imgCleanerF.h
 
 clean:
-	rm -f imgCleaner *.o
+	rm -f imgCleaner *.o bin/ obj/
